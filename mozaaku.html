@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spesial Buat Moza ❤️</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #ffe5ec, #ffc2d1, #ffb3c6);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            overflow: hidden;
+            text-align: center;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 35px 25px;
+            border-radius: 25px;
+            box-shadow: 0 15px 35px rgba(255, 71, 126, 0.2);
+            max-width: 400px;
+            width: 85%;
+            transition: all 0.4s ease;
+            border: 2px solid #ffccd5;
+        }
+        h1 {
+            color: #ff477e;
+            margin-bottom: 20px;
+            font-size: 26px;
+            animation: pulse 2s infinite;
+        }
+        p {
+            color: #4a4a4a;
+            font-size: 16px;
+            line-height: 1.8;
+            min-height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        button {
+            background: linear-gradient(135deg, #ff7096, #ff477e);
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            font-size: 16px;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(255, 112, 150, 0.4);
+            transition: 0.3s;
+            font-weight: bold;
+        }
+        button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 7px 25px rgba(255, 71, 126, 0.6);
+        }
+        button:active {
+            transform: scale(0.95);
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1 id="title">Hai Moza... ✨</h1>
+        <p id="text">Ada sesuatu yang dari kemarin mau aku sampein ke kamu, tapi rasanya kalau lewat chat biasa kurang spesial. Klik tombol di bawah ya, Moza...</p>
+        <button id="btn" onclick="nextMessage()">Klik di Sini ❤️</button>
+    </div>
+
+    <script>
+        const messages = [
+            "Moza, tahu nggak? Dari sekian banyak hal indah yang ada di dunia ini, kehadiran kamu tetap jadi hal yang paling aku syukuri sampai saat ini.",
+            "Setiap kali aku mikirin kamu, atau sekadar dengar nama kamu disebut, rasanya ada kebahagiaan kecil yang langsung bikin hari-hari aku jadi jauh lebih cerah.",
+            "Aku selalu kagum sama cara kamu tersenyum, cara kamu berbicara, dan segala hal kecil yang ada di dalam diri kamu. Kamu itu istimewa, Moza.",
+            "Makasih ya udah hadir di hidup aku. Makasih udah jadi sosok yang luar biasa baik, sabar, dan selalu bisa bikin aku ngerasa beruntung banget bisa kenal sama kamu.",
+            "Kalau disuruh nulis seberapa sayang aku ke kamu, codingan sepanjang apa pun nggak akan pernah cukup buat ngejelasin semuanya.",
+            "Intinya, tetap sama aku terus ya, Moza? Jangan bosen sama aku, karena kamu adalah bagian paling indah dalam hidup yang nggak akan pernah mau aku lepas. I love you so much, Moza! 💞"
+        ];
+
+        let currentIndex = 0;
+
+        function nextMessage() {
+            const textElement = document.getElementById("text");
+            const btnElement = document.getElementById("btn");
+            const titleElement = document.getElementById("title");
+
+            if (currentIndex < messages.length) {
+                titleElement.innerText = "Untuk Moza-ku 🌌";
+                textElement.innerText = messages[currentIndex];
+                currentIndex++;
+                
+                if (currentIndex === messages.length) {
+                    btnElement.innerText = "Selesai ✨";
+                } else {
+                    btnElement.innerText = "Lanjut... 💞";
+                }
+            } else {
+                titleElement.innerText = "Selamanya... ✨";
+                textElement.innerText = "Kata-kata di codingan ini mungkin ada habisnya, Moza... tapi rasa sayang aku ke kamu ga akan pernah ada ujungnya. Stay with me, ya? 💖";
+                btnElement.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
